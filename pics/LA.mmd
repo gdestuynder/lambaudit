@@ -1,0 +1,6 @@
+graph TD
+  subgraph Custom Lambda runtime
+    LA[Lambaudit.so]--preloaded---R["Runtime (Python, Node, ...)"]
+  end
+    LA--logs-->CloudWatch/stdout
+    R-- run handler -->H["You function code"]
