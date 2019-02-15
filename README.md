@@ -30,6 +30,9 @@ $ make create
 $ make invoke
 ```
 
+[![asciicast](https://asciinema.org/a/TYHEIJSIZqFy4PNMN8KHWqDKw.svg)](https://asciinema.org/a/TYHEIJSIZqFy4PNMN8KHWqDKw)
+
+
 For your own function code, simply use this as the first layer.
 
 ## How does it work?
