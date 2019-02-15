@@ -8,6 +8,28 @@ Lambda functions.
 
 It logs your function's read, write, exec, etc. calls to CloudWatch.
 
+
+### Status
+
+This is a proof-of-concept. It currently only supports a `bash` runtime and sample function calls without much
+fancyness.
+
+
+### How do I run this?
+
+```
+# Compile and pack the runtime
+$ make
+
+# Create the function
+$ make create
+
+# Test run it?
+$ make invoke
+```
+
+For your own function code, simply use this as the first layer.
+
 ## How does it work?
 
 Lambaudit works by replacing well-known function addresses by it's own wrapper. The wrapper logs information about the
