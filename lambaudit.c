@@ -6,8 +6,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-typedef ssize_t (*real_read_t)(int, void *, size_t);
 
+/* Sample call logging POC */
+typedef ssize_t (*real_read_t)(int, void *, size_t);
 
 // Find the real function call address so that we can call it back
 ssize_t real_read(int fd, void *data, size_t size) {
@@ -15,6 +16,7 @@ ssize_t real_read(int fd, void *data, size_t size) {
 }
 
 // Replace the call to the function and log this
+// Note: do NOT use this in production :)
 ssize_t read(int fd, void *data, size_t size) {
   char p[256];
   char fn[4096];
@@ -25,7 +27,14 @@ ssize_t read(int fd, void *data, size_t size) {
   return real_read(fd, data, size);
 }
 
+// <some code to make a nice JSON instead of just printing to stdout>
+//
+
 /*
+ <some code to make it hard to overwrite our function hooks addresses here>
+ <some code to forbid reading maps>
+ <etc>
+
 extern void *dlsym(void *nupe, const char *nope) {
   fprintf(stderr, "dlsym() called\n");
 }

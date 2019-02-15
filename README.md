@@ -1,6 +1,8 @@
 # lambaudit
 Syscall-like auditing for Lambda functions in AWS
 
+![Lamb](pics/lamb_rfree.png)
+
 ## What is this?
 
 This emulates having a setup such as Linux Audit (e.g.: https://github.com/gdestuynder/audisp-json) running, but within
